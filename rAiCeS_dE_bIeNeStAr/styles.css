@@ -1,0 +1,1079 @@
+
+/* ========================================
+   RAÍCES DE BIENESTAR
+   Estilos generales
+======================================== */
+
+:root {
+    --primary: #81D4FA;
+    --secondary: #FFB74D;
+    --accent: #A5D6A7;
+    --dark: #2C3E50;
+    --light: #F0F4F8;
+    --white: #FFFFFF;
+
+    /* Nueva paleta infantil */
+    --cream: #FFF9F2;
+    --pink: #F2A4B7;
+    --pink-light: #FCE8EE;
+    --mint: #B8E6DF;
+    --blue-title: #2E6F9E;
+    --border-soft: #F5E5DD;
+}
+
+/* ========================================
+   RESET Y CONFIGURACIÓN GENERAL
+======================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: #FDFBF4;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-padding-top: 85px;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: clip;
+
+    /* Footer siempre al fondo de la pantalla */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenido principal ocupa el espacio sobrante
+   y empuja el pie de página hacia abajo */
+body > section {
+    flex: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img,
+iframe,
+video {
+    max-width: 100%;
+}
+
+/* ========================================
+   ENCABEZADO Y MENÚ
+======================================== */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+}
+
+header .container {
+    width: 100%;
+    max-width: none;
+    padding: 0 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 65px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--pink);
+}
+
+/* ========================================
+   PORTADA PRINCIPAL
+======================================== */
+
+.hero {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    background: url("img/slider.jpg") center / cover no-repeat;
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero-content {
+    position: absolute;
+    top: 65%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.btn-primary {
+    background: var(--secondary);
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #F4A340;
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   SECCIONES Y TÍTULOS
+======================================== */
+
+.section-padding {
+    padding: 100px 20px;
+    background: transparent;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: var(--blue-title);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.bg-light {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.bg-dark {
+    background: rgba(44, 62, 80, 0.94);
+    color: #FFFFFF;
+}
+
+.text-white {
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ========================================
+   DISTRIBUCIÓN DE TARJETAS
+======================================== */
+
+.grid-4,
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: 25px;
+    width: 100%;
+    min-width: 0;
+}
+
+/* ========================================
+   TARJETAS INFANTILES
+======================================== */
+
+.card,
+.invest-box,
+.tool-box {
+    background: var(--cream);
+    padding: 35px 22px;
+    border-radius: 24px;
+    text-align: center;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    border: 2px solid var(--border-soft);
+    box-shadow: 0 6px 16px rgba(80, 120, 140, 0.12);
+    min-width: 0;
+}
+
+.card:hover,
+.invest-box:hover,
+.tool-box:hover {
+    transform: translateY(-6px);
+    border-color: var(--mint);
+    box-shadow: 0 12px 24px rgba(80, 120, 140, 0.17);
+}
+
+/* Iconos Font Awesome */
+.card i,
+.invest-box i {
+    font-size: 3rem;
+    color: var(--pink);
+    margin-bottom: 18px;
+}
+
+/* Enlaces de las tarjetas */
+a.card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.card:hover {
+    text-decoration: none;
+}
+
+.card p,
+.invest-box p,
+.tool-box p {
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+a.invest-box {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+}
+
+/* Emojis infantiles */
+.friendly-emoji {
+    display: block;
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .friendly-emoji,
+.invest-box:hover .friendly-emoji {
+    transform: scale(1.1) rotate(-4deg);
+}
+
+/* ========================================
+   CAJA DE HERRAMIENTAS
+======================================== */
+
+.placeholder-img {
+    height: 180px;
+    background: #D8F1F8;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #FFFFFF;
+}
+
+/* ========================================
+   VIDEO
+======================================== */
+
+.video-placeholder {
+    max-width: 800px;
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    border: 3px dashed var(--secondary);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.video-placeholder i {
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.video-wrap {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.video-wrap iframe,
+.video-wrap video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
+}
+
+.social-side,
+.form-side {
+    min-width: 0;
+}
+
+.social-icons a {
+    display: block;
+    text-decoration: none;
+    color: var(--dark);
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid var(--mint);
+    border-radius: 14px;
+    font-weight: 700;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--mint);
+    color: var(--dark);
+}
+
+.form-side input,
+.form-side textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #D9DFE5;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #FFFFFF;
+}
+
+.form-side textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-side input:focus,
+.form-side textarea:focus {
+    outline: 2px solid var(--mint);
+    border-color: var(--mint);
+}
+
+/* ========================================
+   BOTÓN FLOTANTE DE WHATSAPP
+======================================== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: #FFFFFF;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    z-index: 9999;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background: #20BA5A;
+    color: #FFFFFF;
+    text-decoration: none;
+    transform: scale(1.06);
+}
+
+.whatsapp-float i {
+    text-decoration: none;
+}
+
+.whatsapp-float:focus-visible {
+    outline: 3px solid #2E6F9E;
+    outline-offset: 4px;
+}
+
+/* ========================================
+   ANIMACIONES AL DESPLAZARSE
+======================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+/* ========================================
+   PÁGINAS INTERNAS
+   Misión, Visión, Equipo y Reseña
+======================================== */
+
+.detail-content {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    padding: 40px 36px;
+    box-shadow: 0 8px 24px rgba(46, 111, 158, 0.15);
+}
+
+.detail-content h2 {
+    color: var(--blue-title);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.detail-content p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.detail-content h3 {
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    margin: 30px 0 15px;
+}
+
+.detail-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.detail-content li {
+    margin-bottom: 15px;
+    font-size: 1.02rem;
+}
+
+/* Enlace para volver */
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--blue-title);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--secondary);
+}
+
+/* Fotografías del equipo */
+.team-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.team-photos img {
+    width: 100%;
+    border-radius: 18px;
+    object-fit: cover;
+    height: 280px;
+}
+
+/* ========================================
+   ENTREVISTAS Y DOCUMENTOS PDF
+======================================== */
+
+.pdf-link-box {
+    background: #F0F8FA;
+    border-radius: 20px;
+    padding: 50px 30px;
+    margin-top: 30px;
+}
+
+.pdf-link-box i.fa-file-pdf {
+    font-size: 4rem;
+    color: #E74C3C;
+    margin-bottom: 15px;
+}
+
+.pdf-link-box h3 {
+    margin-top: 0;
+}
+
+.pdf-link-box .btn-primary {
+    margin-top: 20px;
+}
+
+/* ========================================
+   CIFRAS DE DATOS CLAVE
+======================================== */
+
+.data-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--blue-title);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* ========================================
+   FONDO ILUSTRADO
+   Imagen: img/background.png
+======================================== */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("img/background.png") center / cover no-repeat;
+}
+
+/* ========================================
+   DISEÑO ADAPTABLE
+======================================== */
+
+/* Tabletas */
+@media (max-width: 900px) {
+    .section-padding {
+        padding: 75px 20px;
+    }
+
+    .section-title {
+        font-size: 2.1rem;
+    }
+
+    .contact-grid {
+        gap: 25px;
+    }
+
+    .hero-content {
+        left: 70%;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links li a {
+        font-size: 0.82rem;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    header .container {
+        padding: 0 10px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+
+    .logo img {
+        height: 48px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .nav-links li a {
+        margin-left: 0;
+        font-size: 0.72rem;
+    }
+
+    .hero {
+        aspect-ratio: auto;
+        min-height: 480px;
+        background-position: center;
+    }
+
+    .hero-content {
+        top: 72%;
+        left: 50%;
+        width: 90%;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .section-padding {
+        padding: 60px 16px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .grid-4,
+    .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .card,
+    .invest-box,
+    .tool-box {
+        padding: 30px 20px;
+    }
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .detail-content {
+        padding: 28px 20px;
+    }
+
+    .detail-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .team-photos {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .video-placeholder {
+        height: 250px;
+    }
+
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        right: 18px;
+        bottom: 18px;
+        font-size: 1.9rem;
+    }
+
+    body::before {
+        background-position: 40% center;
+    }
+
+    footer {
+        padding: 30px 16px;
+    }
+}
+
+/* Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* Imagen del Avatar Interactivo */
+.avatar-img {
+    height: 220px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #FFF5FA;
+    border-radius: 20px;
+}
+
+.avatar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.tool-box:hover .avatar-img img {
+    transform: scale(1.05);
+}
+
+/* Imagen del Mini-cuento */
+.minicuento-img {
+    height: 220px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #FFF5FA;
+    border-radius: 20px;
+}
+
+.minicuento img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.tool-box:hover .minicuento-img img {
+    transform: scale(1.05);
+}
+
+/* Imagen del Escudo */
+.escudo-img {
+    height: 220px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #FFF5FA;
+    border-radius: 20px;
+}
+
+.escudo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.tool-box:hover .escudo-img img {
+    transform: scale(1.05);
+}
+
+/* Mensaje de gracias del formulario */
+.gracias-box {
+    background: var(--cream);
+    border: 2px solid var(--mint);
+    border-radius: 24px;
+    padding: 40px 25px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(80, 120, 140, 0.12);
+}
+
+.gracias-box[hidden] {
+    display: none;
+}
+
+.gracias-box h3 {
+    color: var(--blue-title);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+}
+
+.gracias-firma {
+    margin-top: 15px;
+    font-weight: 800;
+    color: var(--pink);
+}
+
+/* Enlace activo del menú */
+.nav-links li a {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--pink);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a.active {
+    color: var(--pink);
+}
+
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+/* Botón destacado "Probar la Caja" */
+.btn-caja {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    padding: 20px 46px;
+    background: linear-gradient(135deg, #FFB74D 0%, #FF8A65 100%);
+    box-shadow: 0 8px 0 #E9803F, 0 14px 24px rgba(255, 138, 101, 0.45);
+    border: 3px solid #FFFFFF;
+    position: relative;
+    animation: latido 2s ease-in-out infinite;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-caja i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.btn-caja:hover {
+    background: linear-gradient(135deg, #FFC107 0%, #FF7043 100%);
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 12px 0 #E9803F, 0 20px 30px rgba(255, 138, 101, 0.5);
+    animation: none;
+}
+
+/* Efecto de botón presionado */
+.btn-caja:active {
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #E9803F, 0 6px 12px rgba(255, 138, 101, 0.4);
+}
+
+/* Latido suave */
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.06); }
+}
+
+/* Brillo que cruza el botón */
+.btn-caja::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    transform: skewX(-20deg);
+    animation: brillo 3.5s ease-in-out infinite;
+    border-radius: 50px;
+}
+
+@keyframes brillo {
+    0%, 60%  { left: -80%; }
+    100%     { left: 130%; }
+}
+
+/* Si la persona prefiere menos movimiento, se quitan las animaciones */
+@media (prefers-reduced-motion: reduce) {
+    .btn-caja,
+    .btn-caja::after {
+        animation: none;
+    }
+}
+
+/* Imágenes de las páginas internas */
+.img-efectos {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 10px auto 25px;
+}
+
+.img-efectos-lado {
+    float: right;
+    width: 200px;
+    margin: 0 0 15px 25px;
+}
+
+@media (max-width: 600px) {
+    .img-efectos-lado {
+        float: none;
+        display: block;
+        margin: 15px auto;
+    }
+}
+
+/* ========================================
+   DATOS CLAVE (tarjetas de cifras)
+======================================== */
+
+.datos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.dato-card {
+    position: relative;
+    background: var(--cream);
+    border: 2px solid var(--border-soft);
+    border-radius: 26px;
+    padding: 34px 22px 28px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(80, 120, 140, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Franja de color superior */
+.dato-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--color-dato);
+}
+
+.dato-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 26px rgba(80, 120, 140, 0.2);
+}
+
+.dato-card .dato-emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--fondo-dato);
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.dato-card:hover .dato-emoji {
+    transform: scale(1.12) rotate(-6deg);
+}
+
+.dato-card .dato-numero {
+    display: block;
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-dato);
+    margin-bottom: 14px;
+}
+
+/* Barra de progreso */
+.dato-barra {
+    height: 12px;
+    background: #EDEFF2;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto 18px;
+    max-width: 180px;
+}
+
+.dato-barra span {
+    display: block;
+    height: 100%;
+    min-width: 8px;
+    border-radius: 20px;
+    background: var(--color-dato);
+    animation: llenarBarra 1.4s ease-out;
+}
+
+@keyframes llenarBarra {
+    from { width: 0; }
+}
+
+.dato-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+    color: var(--dark);
+}
+
+.dato-card p {
+    font-size: 0.93rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Colores de cada tarjeta */
+.dato-rosa  { --color-dato: #E57A99; --fondo-dato: #FCE8EE; }
+.dato-menta { --color-dato: #3FB5A3; --fondo-dato: #D9F3EF; }
+.dato-azul  { --color-dato: #2E6F9E; --fondo-dato: #DCEEFA; }
+
+/* Respeta a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .dato-barra span {
+        animation: none;
+    }
+}
